@@ -33,7 +33,6 @@ async function getRepos( username ) {
 }
 
 function createUserCard( user ) {
-    console.log(user.created_at)
     const userID = user.name || user.login;
     const userBio = user.bio ? `<p>${ user.bio}</p>` : '';
     const cardHTML = `
@@ -44,8 +43,12 @@ function createUserCard( user ) {
         <div class="user-info">
         <h2>${ userID }</h2>
             ${ userBio }
-        <h4> User since 
+        <h4> 
+            User since
             ${ user.created_at.slice(0,10)}
+            </br>
+            ID
+            ${ user.id }
         </h4>
         </div>
             <ul>
